@@ -2,17 +2,22 @@ const mobileMenu = document.querySelector('.mobilecontainer');
 const closeBtn = document.querySelector('.fa-close');
 const hamburgerBtn = document.querySelector('.fa-bars');
 const backdrop = document.querySelector('.menu-backdrop');
+const header = document.querySelector('header');
 
 function openMenu() {
   mobileMenu.classList.add('active');
   backdrop.classList.add('active');
   document.body.style.overflow = 'hidden'; // Lock scroll
+  header.style.backdropFilter = 'none';  
+  header.style.webkitBackdropFilter = 'none';  
 }
 
 function closeMenu() {
   mobileMenu.classList.remove('active');
   backdrop.classList.remove('active');
   document.body.style.overflow = 'auto'; // Unlock scroll
+  header.style.backdropFilter = 'blur(8px)';  
+  header.style.webkitBackdropFilter = 'blur(8px)';  
 }
 
 // Open when you click hamburger
